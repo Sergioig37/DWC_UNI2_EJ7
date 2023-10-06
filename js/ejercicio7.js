@@ -1,7 +1,7 @@
 var partidos = new Array();
 partidos[0] = [" ", "Ayuntamiento", "Polideportivo", "Instituto", "Mercado", "Colegio"];
 partidos[1] = ["PV", " "," ", " ", " ", " "];
-partidos[2] = ["0V", " "," ", " ", " ", " "];
+partidos[2] = ["OV", " "," ", " ", " ", " "];
 partidos[3] = ["VpSI", " "," ", " ", " ", " "];
 partidos[4] = ["UPV", " "," ", " ", " ", " "];
 
@@ -13,5 +13,40 @@ function votacion(partidos){
     }
 }
 
+
+function calcularVotos(partidos){
+
+    var partido = "";
+    var votos;
+    for(var i=1; i<partidos.length;i++){
+        votos = parseInt(0);
+        partido = partidos[i][0];
+        for(var j=1; j<partidos[i].length;j++){
+            votos += partidos[i][j];
+        }
+        console.log(partido+" obtuvo " + votos + " votos ");
+    }
+}
+
+function recuentodeVotos(partidos){
+
+    var recuentoVotos = [];
+    var partido = "";
+    var votos;
+    for(var i=1; i<partidos.length;i++){
+        partido = partidos[i][0];
+        recuentoVotos = [];
+        for(var j=1; j<partidos[i].length;j++){
+            recuentoVotos.push(partidos[i][j]);
+        }
+        console.log(partido+":" +recuentoVotos);
+    }
+}
+
 votacion(partidos);
 console.table(partidos);
+calcularVotos(partidos);
+recuentodeVotos(partidos);
+
+
+
